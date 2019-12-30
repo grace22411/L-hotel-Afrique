@@ -56,4 +56,21 @@ $(document).ready(function(){
             
             if(autoswitch == true){
                setInterval(next, autoswicth_speed); }
-})
+
+             
+  
+});
+
+var folder = "";
+var pictures=["images/5ddc3fb13db18@2x.png","images/Cozy.jpg","images/Dine.jpg","images/DipPool.jpg","images/SleepInGrandStyle.jpg","images/LoungeInExtravagance.jpg","images/WorkOut.jpg"];
+var num = 0;
+function main(){
+    var slider = document.getElementsByTagName("section")[0];
+        if (num == 6) num = 0;
+        else num++;
+        
+         slider.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("+pictures[num]+")"  ;
+     }
+         
+     setInterval('main()', 3000);
+
