@@ -118,6 +118,85 @@
   box-sizing: border-box;
 }
 
+.right {
+  bottom: 0;
+  position: fixed;
+  height: 380px;
+  z-index: 9999;
+  float: left !important;
+  width: 70px;
+  padding-left: 20px;
+  padding-bottom: 30px;
+}
+.right .share {
+  background-color: #B98036;
+  color: #fff;
+  width: 50px;
+  bottom: 20px;
+  position: fixed;
+  cursor: pointer;
+  height: 50px;
+  border-radius: 100%;
+  box-sizing: border-box;
+  margin: 0 auto 0 auto;
+}
+.right .share i {
+  margin: 15px;
+  font-size: 20px;
+}
+.right .expgroup {
+  width: 50px;
+  text-align: center;
+  height: 280px;
+}
+.right .expgroup a button {
+  display: list-item;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  margin-top: 7px;
+  font-size: 20px;
+  color: #fff;
+  transition: 0.2s ease-in;
+}
+.right .expgroup a button:hover {
+  background-color: #B98036;
+}
+.right .expgroup a:nth-child(1) button {
+  background-color: #4267B2;
+}
+.right .expgroup a:nth-child(2) button {
+  background-color: #0077B5;
+}
+.right .expgroup a:nth-child(3) button {
+  background-color: #ED4956;
+}
+.right .expgroup a:nth-child(4) button {
+  background-color: #1DA1F2;
+}
+.right .expgroup a:nth-child(5) button {
+  background-color: #FF0000;
+}
+.right span {
+  font-weight: 700;
+}
+@media only screen and (max-width: 320px) {
+  .right {
+    padding-left: 10px;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 540px) {
+  .right {
+    padding-left: 10px;
+  }
+}
+@media only screen and (min-width: 541px) and (max-width: 720px) {
+  .right {
+    padding-left: 10px;
+  }
+}
+
 body {
   height: 100%;
   width: 100%;
@@ -170,7 +249,7 @@ body {
 section {
   width: 100%;
   height: 660px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(images/5ddc3fb13db18@2x.png);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/Cozy.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -182,30 +261,24 @@ section .top-header {
 section .top-header .left {
   margin: 0;
 }
-section .top-header .left .col-md-2, section .top-header .left .col-md-3 {
+section .top-header .left .col-md-2, section .top-header .left .col-md-3, section .top-header .left .col-md-4 {
   padding: 0;
   color: #fff;
   font-size: 14px;
 }
-section .top-header .left .col-md-2 a, section .top-header .left .col-md-3 a {
+section .top-header .left .col-md-2 a, section .top-header .left .col-md-3 a, section .top-header .left .col-md-4 a {
   color: #fff;
   transition: 0.2s ease-in;
 }
-section .top-header .left .col-md-2 a img, section .top-header .left .col-md-3 a img {
+section .top-header .left .col-md-2 a img, section .top-header .left .col-md-3 a img, section .top-header .left .col-md-4 a img {
   margin-right: 10px;
 }
-section .top-header .left .col-md-2 a:hover, section .top-header .left .col-md-3 a:hover {
+section .top-header .left .col-md-2 a:hover, section .top-header .left .col-md-3 a:hover, section .top-header .left .col-md-4 a:hover {
   color: #B98036;
   text-decoration: none;
 }
-section .top-header .left .col-md-2 a:hover img, section .top-header .left .col-md-3 a:hover img {
+section .top-header .left .col-md-2 a:hover img, section .top-header .left .col-md-3 a:hover img, section .top-header .left .col-md-4 a:hover img {
   color: #B98036 !important;
-}
-section .top-header .left .col-md-4 {
-  padding: 0;
-}
-section .top-header .left .col-md-4 img {
-  float: right;
 }
 section .top-header .left .shit {
   margin-left: 15px;
@@ -248,7 +321,7 @@ section header i {
   display: none !important;
 }
 @media only screen and (max-width: 320px) {
-  section .top-header .col-md-2, section .top-header .col-md-3 {
+  section .top-header .col-md-2, section .top-header .col-md-3, section .top-header .col-md-4 {
     display: none;
   }
   section header ul {
@@ -266,7 +339,7 @@ section header i {
   section .container {
     padding: 0 30px;
   }
-  section .top-header .col-md-2, section .top-header .col-md-3 {
+  section .top-header .col-md-2, section .top-header .col-md-3, section .top-header .col-md-4 {
     display: none;
   }
   section header img {
@@ -287,7 +360,7 @@ section header i {
   section .container {
     padding: 0 50px;
   }
-  section .top-header .col-md-2, section .top-header .col-md-3 {
+  section .top-header .col-md-2, section .top-header .col-md-3, section .top-header .col-md-4 {
     display: none;
   }
   section header img {
@@ -304,6 +377,93 @@ section header i {
     cursor: pointer;
   }
 }
+section .caption {
+  color: #fff;
+  padding-top: 200px;
+}
+section .caption .caption_text {
+  width: 100%;
+  text-align: center;
+  font-family: "PT Serif", serif;
+}
+section .caption .text_2, section .caption .text_3, section .caption .text_4, section .caption .text_5, section .caption .text_6 {
+  display: none;
+}
+section .caption .cons {
+  float: right;
+  width: 50px;
+  margin-top: 50px;
+}
+section .caption .cons .fas {
+  color: black;
+  height: 50px;
+  font-size: 20px;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  visibility: hidden;
+}
+section .caption .cons .down {
+  margin-top: 30px;
+}
+section .caption .cons .fas:hover {
+  opacity: 1;
+}
+section .caption .cons:hover .fas {
+  visibility: visible;
+}
+section .caption h1 {
+  font-size: 47px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 320px) {
+  section .caption {
+    padding-top: 20px;
+  }
+  section .caption .caption_text {
+    width: 95%;
+    margin-top: 60px;
+  }
+  section .caption h1 {
+    font-size: 25px;
+  }
+  section .caption p {
+    font-size: 13px;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 540px) {
+  section .caption {
+    padding: 0px 30px;
+  }
+  section .caption .caption_text {
+    width: 95%;
+    margin-top: 90px;
+  }
+  section .caption h1 {
+    font-size: 25px;
+  }
+  section .caption p {
+    font-size: 13px;
+  }
+}
+@media only screen and (min-width: 541px) and (max-width: 720px) {
+  section .caption {
+    padding-top: 25px;
+    padding: 0px 50px;
+  }
+  section .caption .caption_text {
+    width: 95%;
+    margin-top: 150px;
+  }
+  section .caption h1 {
+    font-size: 25px;
+  }
+  section .caption p {
+    font-size: 13px;
+  }
+}
+
 .booke {
   bottom: 0;
   position: absolute;
@@ -331,6 +491,7 @@ section header i {
 }
 .booking .row .col-md-2 p, .booking .row .col-md-3 p {
   font-size: 12px;
+  font-weight: 700;
   margin-bottom: 5px;
 }
 .booking .row .col-md-2 .custom, .booking .row .col-md-3 .custom {
@@ -610,7 +771,6 @@ section header i {
 }
 .customer .row .values .valuey .benefit {
   width: 25%;
-  text-align: center;
   float: left;
 }
 .customer .row .values .valuey .benefit p {
@@ -635,18 +795,18 @@ section header i {
   color: #444444;
   font-family: "PT Serif", serif;
 }
-.customer .row .reviews .caption_text h1 {
+.customer .row .reviews .capt-text h1 {
   color: #B98036;
   margin: 0;
 }
-.customer .row .reviews .caption_text p {
+.customer .row .reviews .capt-text p {
   font-size: 15px;
 }
-.customer .row .reviews .caption_text span {
+.customer .row .reviews .capt-text span {
   font-size: 15px;
   line-height: 0.9em;
 }
-.customer .row .reviews .text_2, .customer .row .reviews .text_3, .customer .row .reviews .text_4 {
+.customer .row .reviews .capt-2, .customer .row .reviews .capt-3, .customer .row .reviews .capt-4 {
   display: none;
 }
 @media only screen and (max-width: 320px) {
@@ -929,30 +1089,24 @@ section header i {
 .room .top-header .left {
   margin: 0;
 }
-.room .top-header .left .col-md-2, .room .top-header .left .col-md-3 {
+.room .top-header .left .col-md-2, .room .top-header .left .col-md-3, .room .top-header .left .col-md-4 {
   padding: 0;
   color: #fff;
   font-size: 14px;
 }
-.room .top-header .left .col-md-2 a, .room .top-header .left .col-md-3 a {
+.room .top-header .left .col-md-2 a, .room .top-header .left .col-md-3 a, .room .top-header .left .col-md-4 a {
   color: #fff;
   transition: 0.2s ease-in;
 }
-.room .top-header .left .col-md-2 a img, .room .top-header .left .col-md-3 a img {
+.room .top-header .left .col-md-2 a img, .room .top-header .left .col-md-3 a img, .room .top-header .left .col-md-4 a img {
   margin-right: 10px;
 }
-.room .top-header .left .col-md-2 a:hover, .room .top-header .left .col-md-3 a:hover {
+.room .top-header .left .col-md-2 a:hover, .room .top-header .left .col-md-3 a:hover, .room .top-header .left .col-md-4 a:hover {
   color: #B98036;
   text-decoration: none;
 }
-.room .top-header .left .col-md-2 a:hover img, .room .top-header .left .col-md-3 a:hover img {
+.room .top-header .left .col-md-2 a:hover img, .room .top-header .left .col-md-3 a:hover img, .room .top-header .left .col-md-4 a:hover img {
   color: #B98036 !important;
-}
-.room .top-header .left .col-md-4 {
-  padding: 0;
-}
-.room .top-header .left .col-md-4 img {
-  float: right;
 }
 .room .top-header .left .shit {
   margin-left: 15px;
@@ -1014,7 +1168,7 @@ section header i {
   .room {
     height: 350px;
   }
-  .room .top-header .col-md-2, .room .top-header .col-md-3 {
+  .room .top-header .col-md-2, .room .top-header .col-md-3, .room .top-header .col-md-4 {
     display: none;
   }
   .room header ul {
@@ -1687,5 +1841,50 @@ section header i {
     width: 50%;
   }
 }
+.container.no-gutter {
+  padding: 40px 0;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.item {
+  border: none;
+}
+.item .item-wrap img {
+  height: 200px;
+  width: 300px;
+}
+
+/* Isotope Transitions
+------------------------------- */
+.isotope,
+.isotope .item {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -ms-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -ms-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width;
+}
+
+.isotope .item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -ms-transition-property: -ms-transform, opacity;
+  -o-transition-property: top, left, opacity;
+  transition-property: transform, opacity;
+}
+
+/* responsive media queries */
 
 /*# sourceMappingURL=style.css.map */

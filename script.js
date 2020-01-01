@@ -8,18 +8,18 @@ $(document).ready(function(){
         $(".modal-content").fadeOut();
     })
 
-    var speed = 500;
+            var speed = 500;
             var autoswitch = true;
-            var autoswicth_speed = 3000;
-           var $counter = 0;
-            var txtArray = ['.text_1','.text_2','.text_3'];
+            var autoswicth_speed = 5000;
+            var $counter = 0;
+            var txtArray = ['.text_1','.text_2','.text_3','.text_4','.text_5','.text_6'];
             //console.log(imgArray);
             var $new_ctn = 0;
      
             var $call = $(".call");
      
-            $(".down").on('click',next);
-            function next(){
+            $(".down").on('click',banner);
+            function banner(){
                 $counter++;
                 if($counter >= txtArray.length) $counter = 0;
                 $(".caption_text").hide();
@@ -55,22 +55,49 @@ $(document).ready(function(){
             });
             
             if(autoswitch == true){
-               setInterval(next, autoswicth_speed); }
+               setInterval(banner, autoswicth_speed); }
 
+
+
+                $(".expgroup").hide();
+            $(".share").click(function(){
+                $(".expgroup").animate({height:'toggle'});
+            });
+
+             /* activate jquery isotope */
+            var $container = $('#posts').isotope({
+                itemSelector : '.item',
+                isFitWidth: true
+            });
+
+            $(window).smartresize(function(){
+                $container.isotope({
+                columnWidth: '.col-sm-3'
+                });
+            });
+            
+            $container.isotope({ filter: '*' });
+
+                // filter items on button click
+            $('#filters').on( 'click', 'button', function() {
+                var filterValue = $(this).attr('data-filter');
+                $container.isotope({ filter: filterValue });
+            });
              
   
 });
 
 var folder = "";
-var pictures=["images/5ddc3fb13db18@2x.png","images/Cozy.jpg","images/Dine.jpg","images/DipPool.jpg","images/SleepInGrandStyle.jpg","images/LoungeInExtravagance.jpg","images/WorkOut.jpg"];
+var pictures=["images/Cozy.jpg","images/Dine.jpg","images/DipPool.jpg","images/SleepInGrandStyle.jpg","images/LoungeInExtravagance.jpg","images/WorkOut.jpg"];
 var num = 0;
 function main(){
     var slider = document.getElementsByTagName("section")[0];
-        if (num == 6) num = 0;
+        if (num == 5) num = 0;
         else num++;
         
          slider.style.backgroundImage = "linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("+pictures[num]+")"  ;
      }
          
-     setInterval('main()', 3000);
+     setInterval('main()', 5000);
+
 
