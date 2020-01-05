@@ -1704,7 +1704,7 @@ section{
        height:600px;
        margin: 30px auto;
        h1{
-        color:#B98036;
+        color:rgb(248, 248, 248);
         font-size:50px;
         font-size:900;
         margin-bottom:0;
@@ -2087,98 +2087,398 @@ section{
   }
 }
 
-/* Isotope Transitions
-------------------------------- */
-.isotope,
-.isotope .item {
-  -webkit-transition-duration: 0.8s;
-     -moz-transition-duration: 0.8s;
-      -ms-transition-duration: 0.8s;
-       -o-transition-duration: 0.8s;
-          transition-duration: 0.8s;
+// @import "compass/css3";
+
+$red: #800000;//actualy #800000; #E68A00
+$yellow: #EDC951;
+$green:#248F24; 
+$mtab:#CC333F;
+$gbuttons:#EDC951;
+$pbuttons:#EDC951;
+$hovborder:#CC333F;
+$info:#00A0B0;
+$blue:#C6E5D9;
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+
+.portfolio img {
+   width: 100%;
+   height: 200px;
+   display: block; 
+  //@extend transition( all .4s ease-in-out );
 }
 
-.isotope {
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-      -ms-transition-property: height, width;
-       -o-transition-property: height, width;
-          transition-property: height, width;
-}
+.wrap {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding-left: 20px;
+   .portfolio {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
 
-.isotope .item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-      -ms-transition-property:     -ms-transform, opacity;
-       -o-transition-property:         top, left, opacity;
-          transition-property:         transform, opacity;
-}
-  
-  
-/* responsive media queries */
 
-@media (max-width: 768px) {
+    li {
+        float: left;
+        width: 100%;
+        list-style: none;
+        //@include transition( all .4s ease-in-out );
+        -webkit-backface-visibility: hidden;
+        -webkit-perspective: 1000;
+        img{
+            max-height: 250px;
+        }
+        }
+    
+    figure {
+        margin: 0 20px 20px 0;
+        position: relative;
+        text-align: center;
+        transition: .2s ease-in-out;
+        border: 3px solid white;
+        //@include border-radius(8px);
+        overflow: hidden;
+        background:#B98036;
+    //@include transition( all .4s ease-in-out );
+        box-shadow: 3px 3px 8px #f0f0f0;
+    }
+    
+    figure:hover {
+        border: 3px solid #fff;
+        
+        img {
+            opacity: .2;
+            -ms-filter:   "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)      ";
+            //@include transform( scale(5));
+        }
+        
+        figcaption {
+            top: 50%;
+            margin-top: -20px;
+            }
+        
+        h3 {
+            bottom: 63%;
+            }
+    }
+    
+    figcaption {
+        position: absolute;
+        width: 100%;
+        top: 100%; left: 0;
+        transition:all .2s ease-in-out .2s ;
+        //@include transition( all .2s ease-in-out .2s); 
+        }
+    }
+
+    #fp {
+        background-color: $pbuttons;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        text-shadow: 0 -1px 1px saturate( darken($pbuttons, 20%), 20%);
+        text-decoration: none;
+        color: #fff;
+        width: 50px; height: 50px;
+        line-height: 50px;
+        //@include border-radius(50%);
+        display: inline-block;
+        //@include transition( all .2s ease-in-out);
+    
+        &:hover {
+        background-color: darken( $pbuttons, 10%);
+        }
+    }
+
+    h3 {
+        color: #fff;
+        font-family: 'Pacifico', sans-serif;
+        text-shadow: 0 0 5px rgba( black, .6);
+        font-weight: 500;
+        font-size: 25px;
+        padding: 1em .7em;
+        line-height:100%;
+        //@include border-radius(50%);
+        position: absolute;
+        bottom: 100%; left: 0;
+        width: 100%;
+        display: inline-block;
+        padding: 0; margin: 0;
+        //@include transition( all .15s ease-in-out .4s);
+    }
+
+    .info {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-shadow: 0 0 5px rgba( black, .6);
+        font-size: 15px;
+    }
+
+    .tabs {
+    margin: 0 0 20px 0;
+    padding: 0;
+    overflow: hidden;
+    
+    li {
+        list-style: none;
+        float: left;
+        margin: 20px 20px 0 0;
+    } 
+    }
+
+    #pf {
+        //@include border-radius(8px);
+        width: auto; height: auto;
+        padding: 0 1em;
+        border-bottom: 4px solid darken( $gbuttons, 20%);
+        position: relative; 
+        //@include transition(none);
+
+        background-color: $gbuttons;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        text-shadow: 0 -1px 1px saturate( darken($gbuttons, 20%), 20%);
+        text-decoration: none;
+        color: #FFF;
+        line-height: 50px;
+        display: inline-block;
+        //@include transition( all .2s ease-in-out);
+    
+        &:active {
+        top: 3px;
+        border-bottom: none;
+        }
+        
+        &.active {
+        background-color: darken( $gbuttons, 10%);
+        }
+    
+        &:hover {
+        background-color: darken( $gbuttons, 10%);
+        }
+    }
+
+
+    /* all of the Menu/Nav Stuff*/
+
+    .menu{
+    margin:0 auto;
+    padding:20px;
+    display:none;
+    width:26%;
+    top:-5px;
+    text-align:center;
+    background:#FFFFFF;
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+    border-bottom:3px solid $yellow;
+    font-family: 'Lato', Helvetica;
+    font-weight: 300;
+    position:relative;
+    z-index:3;
+    min-width:400px;
+    }
+
+    #navButton {
+    cursor:pointer;
+    position:relative;
+    display:block;
+    margin:0 auto;
+    margin-top:-21px;
+    margin-bottom:40px;
+    width:85px;
+    height:38px;
+    color:#EEE;
+    background:$mtab;
+    text-align:center;
+    padding-top:8px;
+    padding-left:3px;
+    padding-right:3px;
+    font-family: 'Lato', Helvetica;
+    font-weight: 500;
+    z-index:3;
+    text-shadow: 0 -2px 3px saturate( darken($mtab, 20%), 20%);
+    //@include transition( all .4s ease-in-out );
+    }
+    #navButton:before {
+    margin:0px;
+    position:absolute;
+    display:block;
+    margin-left:-3px;
+    top:38px;
+    content:"";
+    width: 0;
+        height: 0;
+    border-top: 33px solid $mtab;
+        border-right: 46px solid transparent;
+    border-bottom-left-radius:6px;
+    }
+    #navButton:after {
+    margin:0px;
+    position:absolute;
+    display:block;
+    top:38px;
+    content:"";
+    width: 0;
+        height: 0;
+    margin-left:36px;
+        border-top: 33px solid $mtab;
+        border-left: 46px solid transparent;
+    border-bottom-right-radius:6px;
+    }
+
+    #bt {
+    text-decoration:none;
+    color: #222;
+    }
+    
+    /*************************************
+    * Basic lightbox styles. Notice the
+    * default 'display' is 'none'.
+    */
+
+    .lightbox {
+    /** Hide the lightbox */
+    display: none;
+
+    /** Apply basic lightbox styling */
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    margin-bottom: 4%;
+    }
+
+    .lightbox img {
+    /** Pad the lightbox image */
+    max-width: 90%;
+    max-height: 80%;
+    margin-top: 5%;
+    //margin-bottom: 5%;
+    }
+
+    .lightbox:target {
+    /** Show lightbox when it is target */
+    display: block;
+
+    /** Remove default browser outline style */
+    outline: none;
+    }
+
+    .lightbox .image {
+        max-width:80%;
+    margin-left: auto;
+    margin-right:auto;
+        }
+
+    .lightbox .image img {
+        //border:5px #FFF solid;
+    border-radius:8px;
+        }
+
+    .lightbox .info {
+        width: 60%;
+        display: block;
+        text-align: center;
+        
+    //margin-right:25%;
+    color:#FFF;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    float:right;
+    margin-top:5%;
+    margin-left: auto;
+    margin-right:auto;
+    background:$info;
+    line-height:2em;
+    //border: 3px dashed #FFF;
+    border-radius: 8px;
+    padding:50px;
+    }	
+    /*.lightbox .info:after {
+    margin:0px;
+    position:relative;
+    display:block;
+    top:37px;
+    left:-50px;
+    content:"";
+    width: 0;
+        height: 0;
+    border-top: 33px solid transparent;
+        border-right: 46px solid #A1DBB2;
+    border-bottom-left-radius:6px;
+    }*/
+
+    .close {
+        position:absolute;
+        margin-top:25px;
+        background-color: $pbuttons;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: bold;
+        text-shadow: 0 -1px 1px saturate( darken($pbuttons, 20%), 20%);
+        text-decoration: none;
+        color: #fff;
+        width: 50px; height: 50px;
+        line-height: 50px; 
+        //@include border-radius(50%);
+        display: inline-block;
+        //@include transition( all .2s ease-in-out);
+    
+        &:hover {
+        background-color: darken( $pbuttons, 10%);
+        }
+    }
+
+    //responsive stuff
+
+    @media (min-width: 660px) {
+    .portfolio li {
+        width: 50%;
+    }
+    }
+
+    @media (min-width: 60px) {
+    .lightbox .info {
+        width: 60%;
+    margin-right:20%;
+    }
+    #fat img {
+        max-height: 60%;
+    }
+        #long img {
+        max-height: 50%;
+        max-width: 80%;
+    }
+    }
+
+    @media (min-width: 1040px) {
+    .portfolio li {
+        width: 33%;
+    }
+    .lightbox .info {
+        width: 33%;
+        margin-left:5%;
+        //margin-right:5%;
+    }
+    #fat img {
+        max-height: 80%;
+        max-width: 50%;
+    }
+        #long img {
+        max-height: 80%;
+        max-width: 50%;
+    }
+    }
+
+    //toggle switch stuff
+
+    .cbwrap{
+    float:right;
+    padding-right:4%;
+    padding-top:4%;
+    }
+
+
 }
-// .gallery{
-//     a:focus {
-//         outline: none;
-//     }
-    
-//     .portfolioFilter {
-//         padding: 15px 0;
-//     }
-    
-//     .portfolioFilter a {
-//         margin-right: 6px;
-//         color: #666;
-//         text-decoration: none;
-//         border: 1px solid #ccc;
-//         padding: 4px 15px;
-//         border-radius: 50px;
-//         display: inline-block;
-//     }
-    
-//     .portfolioFilter a.current {
-//         background: #1e1e1e;
-//         border: 1px solid #1e1e1e;
-//         color: #f9f9f9;
-//     }
-//     .portfolioContainer{
-//         border: 1px solid #eee;
-//         border-radius: 3px;
-//     }
-//     img {
-//         margin: 5px;
-//         max-width:100%;
-//     }
-    
-//     .isotope-item {
-//         z-index: 2;
-//     }
-    
-//     .isotope-hidden.isotope-item {
-//         pointer-events: none;
-//         z-index: 1;
-//     }
-    
-//     .isotope,
-//     .isotope .isotope-item {
-//         /* change duration value to whatever you like */
-//         -webkit-transition-duration: 0.8s;
-//         -moz-transition-duration: 0.8s;
-//         transition-duration: 0.8s;
-//     }
-    
-//     .isotope {
-//         -webkit-transition-property: height, width;
-//         -moz-transition-property: height, width;
-//         transition-property: height, width;
-//     }
-    
-//     .isotope .isotope-item {
-//         -webkit-transition-property: -webkit-transform, opacity;
-//         -moz-transition-property: -moz-transform, opacity;
-//         transition-property: transform, opacity;
-//     }
-// }
 
